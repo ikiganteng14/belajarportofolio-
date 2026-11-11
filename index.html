@@ -1,0 +1,476 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rizky Andika | Junior Network Engineer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #07111f;
+            color: #edf5ff;
+            line-height: 1.6;
+        }
+
+        :root {
+            --primary: #38d6c5;
+            --secondary: #69a9ff;
+            --background: #07111f;
+            --card: #102238;
+            --text: #edf5ff;
+            --muted: #9aadc2;
+        }
+
+        /* NAVBAR */
+        header {
+            background: #0a1929;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #20344a;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            padding: 80px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero-content h4 {
+            color: var(--primary);
+            letter-spacing: 3px;
+        }
+
+        .hero-content h1 {
+            font-size: 55px;
+            margin: 15px 0;
+            line-height: 1.2;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+        }
+
+        .hero-content p {
+            color: var(--muted);
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: #07111f;
+            padding: 12px 25px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 5px 20px #38d6c566;
+        }
+
+        .hero-image {
+            width: 300px;
+            height: 300px;
+            border: 3px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 100px;
+            background: var(--card);
+            box-shadow: 0 0 40px #38d6c533;
+        }
+
+        /* SECTION */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            color: var(--primary);
+        }
+
+        .section-title p {
+            color: var(--muted);
+        }
+
+        /* ABOUT */
+        .about {
+            background: #0a1929;
+        }
+
+        .about-content {
+            background: var(--card);
+            padding: 35px;
+            border-radius: 12px;
+            border: 1px solid #20344a;
+        }
+
+        .about-content p {
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        /* SKILLS */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-box {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #20344a;
+            transition: .3s;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+        }
+
+        .skill-box h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .skill-box p {
+            color: var(--muted);
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        /* PROJECT */
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project-box {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #20344a;
+        }
+
+        .project-box h3 {
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .project-box p {
+            color: var(--muted);
+        }
+
+        /* CONTACT */
+        .contact {
+            background: #0a1929;
+            text-align: center;
+        }
+
+        .contact p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #050d18;
+            color: var(--muted);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+                font-size: 13px;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            .hero-image {
+                width: 200px;
+                height: 200px;
+                font-size: 70px;
+            }
+
+            .skills-container,
+            .project-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="logo">RIZKY.</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#project">Project</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HOME -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+            <h4>HELLO, WELCOME TO MY WEBSITE</h4>
+
+            <h1>
+                I'm <span>Rizky Andika</span>
+            </h1>
+
+            <p>
+                Saya adalah siswa kelas 10 jurusan
+                Teknik Jaringan Komputer dan Telekomunikasi.
+                Saya memiliki minat dalam dunia networking,
+                teknologi informasi, dan infrastruktur jaringan.
+            </p>
+
+            <a href="#about" class="btn">
+                Tentang Saya →
+            </a>
+        </div>
+
+        <div class="hero-image">
+            🌐
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>Mengenal lebih dekat tentang saya</p>
+        </div>
+
+        <div class="about-content">
+            <p>
+                Halo! Nama saya Rizky Andika.
+                Saya merupakan siswa kelas 10 jurusan
+                Teknik Jaringan Komputer dan Telekomunikasi (TJKT).
+
+                Saya tertarik mempelajari jaringan komputer,
+                konfigurasi router dan switch, IP Address,
+                serta troubleshooting jaringan.
+
+                Saya memiliki semangat tinggi untuk terus belajar
+                dan mengembangkan kemampuan menjadi seorang
+                Junior Network Engineer yang profesional.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+
+        <div class="section-title">
+            <h2>My Skills</h2>
+            <p>Kemampuan yang sedang saya pelajari</p>
+        </div>
+
+        <div class="skills-container">
+
+            <div class="skill-box">
+                <div class="icon">🌐</div>
+                <h3>Networking</h3>
+                <p>
+                    Memahami dasar jaringan LAN, WAN,
+                    dan topologi jaringan komputer.
+                </p>
+            </div>
+
+            <div class="skill-box">
+                <div class="icon">🔌</div>
+                <h3>IP Addressing</h3>
+                <p>
+                    Mempelajari IPv4, subnet mask,
+                    gateway, dan subnetting.
+                </p>
+            </div>
+
+            <div class="skill-box">
+                <div class="icon">⚙️</div>
+                <h3>Router & Switch</h3>
+                <p>
+                    Mempelajari konfigurasi dasar
+                    perangkat jaringan.
+                </p>
+            </div>
+
+            <div class="skill-box">
+                <div class="icon">🖥️</div>
+                <h3>Computer Networking</h3>
+                <p>
+                    Memahami perangkat keras dan
+                    infrastruktur komputer.
+                </p>
+            </div>
+
+            <div class="skill-box">
+                <div class="icon">🔧</div>
+                <h3>Troubleshooting</h3>
+                <p>
+                    Mempelajari cara menganalisis
+                    dan memperbaiki masalah jaringan.
+                </p>
+            </div>
+
+            <div class="skill-box">
+                <div class="icon">💻</div>
+                <h3>Network Simulation</h3>
+                <p>
+                    Belajar membuat simulasi jaringan
+                    menggunakan aplikasi pembelajaran.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROJECT -->
+    <section id="project">
+
+        <div class="section-title">
+            <h2>My Projects</h2>
+            <p>Contoh proyek dan praktik jaringan</p>
+        </div>
+
+        <div class="project-container">
+
+            <div class="project-box">
+                <h3>01. Topologi Jaringan LAN</h3>
+                <p>
+                    Membuat simulasi jaringan LAN sederhana
+                    yang menghubungkan beberapa komputer
+                    menggunakan perangkat switch.
+                </p>
+            </div>
+
+            <div class="project-box">
+                <h3>02. Konfigurasi IP Address</h3>
+                <p>
+                    Melakukan latihan konfigurasi IP Address
+                    pada komputer agar dapat saling
+                    berkomunikasi dalam jaringan lokal.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <div class="section-title">
+            <h2>Contact Me</h2>
+            <p>Mari terhubung dan belajar bersama!</p>
+        </div>
+
+        <p>
+            Terima kasih telah mengunjungi website portofolio saya.
+        </p>
+
+        <a href="mailto:emailkamu@example.com" class="btn">
+            Hubungi Saya
+        </a>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            © <span id="year"></span> Rizky Andika.
+            Junior Network Engineer Portfolio.
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
